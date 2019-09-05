@@ -13,16 +13,13 @@
 #' opts[["species"]] <- 9606
 #' opts[["type"]] <- "SELEX"
 #' opts[["all_versions"]] <- TRUE
-#' PFMatrixList <- getMatrixSet(JASPAR2020placeholder, opts)
+#' PFMatrixList <- getMatrixSet(JASPAR2020, opts)
 #'
 #' opts2 <- list()
 #' opts2[["type"]] <- "SELEX"
-#' PFMatrixList2 <- getMatrixSet(JASPAR2020placeholder, opts2)
+#' PFMatrixList2 <- getMatrixSet(JASPAR2020, opts2)
 #'
 #' @import methods
-#' @import JASPAR2014
-#' @import JASPAR2016
-#' @import JASPAR2018
 #' @exportClass JASPAR2020
 setClass("JASPAR2020", slots = c(db = "character")
          )

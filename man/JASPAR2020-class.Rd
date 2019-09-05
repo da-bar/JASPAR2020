@@ -22,11 +22,11 @@ opts <- list()
 opts[["species"]] <- 9606
 opts[["type"]] <- "SELEX"
 opts[["all_versions"]] <- TRUE
-PFMatrixList <- getMatrixSet(JASPAR2020placeholder, opts)
+PFMatrixList <- getMatrixSet(JASPAR2020, opts)
 
 opts2 <- list()
 opts2[["type"]] <- "SELEX"
-PFMatrixList2 <- getMatrixSet(JASPAR2020placeholder, opts2)
+PFMatrixList2 <- getMatrixSet(JASPAR2020, opts2)
 
 }
 \author{
