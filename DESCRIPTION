@@ -11,5 +11,6 @@ Suggests: TFBSTools (>= 1.15.6)
 License: GPL-2
 URL: http://jaspar.genereg.net/
 NeedsCompilation: no
+biocViews:	AnnotationData, FunctionalAnnotation
 LazyData: no
 RoxygenNote: 6.1.1
