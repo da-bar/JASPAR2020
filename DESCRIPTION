@@ -4,7 +4,7 @@ Title: Data package for JASPAR database (version 2020)
 Version: 0.1.0
 Author: Damir Baranasic <damir.baranasic@lms.mrc.ac.uk>
 Maintainer: Damir Baranasic <damir.baranasic@lms.mrc.ac.uk>
-Description: Data package for various versions of JASPAR. To search this
+Description: Data package for JASPAR2020. To search this
              databases, please use the package TFBSTools (>= 1.15.6).
 Depends: R (>= 3.4.0), methods
 Suggests: TFBSTools (>= 1.15.6)
