@@ -1,7 +1,7 @@
 Package: JASPAR2020
 Type: Package
 Title: Data package for JASPAR database (version 2020)
-Version: 0.1.0
+Version: 0.1.1
 Author: Damir Baranasic <damir.baranasic@lms.mrc.ac.uk>
 Maintainer: Damir Baranasic <damir.baranasic@lms.mrc.ac.uk>
 Description: Data package for JASPAR2020. To search this
