@@ -1,0 +1,36 @@
+---
+title: "JASPAR2020"
+output: BiocStyle::html_document
+author:
+-name: Damir Baranasic
+  affiliation: Imperial College London, Faculty of Medicine, Institute of Clinical Sciences, Hammersmith Campus, Du Cane Road, W12 0NN, London
+vignette: >
+  %\VignetteIndexEntry{JASPAR2020}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r, echo=FALSE, results="hide", warning=FALSE}
+suppressPackageStartupMessages({
+  library(JASPAR2020)
+  library(TFBSTools)
+})
+```
+
+```{r setup}
+library(JASPAR2020)
+library(TFBSTools)
+
+```
+
+```{r example}
+
+
+```
