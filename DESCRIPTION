@@ -5,11 +5,16 @@ Version: 0.99.5
 Author: Damir Baranasic <damir.baranasic@lms.mrc.ac.uk>
 Maintainer: Damir Baranasic <damir.baranasic@lms.mrc.ac.uk>
 Description: Data package for JASPAR2020. To search this
-             databases, please use the package TFBSTools (>= 1.15.6).
-Depends: R (>= 3.6.0), methods, TFBSTools (>= 1.23.1)
+             databases, please use the package TFBSTools (>= 1.23.1).
+Depends: R (>= 3.6.0), methods
+Suggests: TFBSTools (>= 1.23.1)
 License: GPL-2
 URL: http://jaspar.genereg.net/
 NeedsCompilation: no
-biocViews:	AnnotationData, FunctionalAnnotation
+biocViews: AnnotationData, FunctionalAnnotation
 LazyData: no
 RoxygenNote: 6.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
