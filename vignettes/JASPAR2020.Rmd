@@ -4,6 +4,7 @@ output: BiocStyle::html_document
 author:
     name: Damir Baranasic
     affiliation: Imperial College London, Faculty of Medicine, Institute of Clinical Sciences, Hammersmith Campus, Du Cane Road, W12 0NN, London
+bibliography: JASPAR2020.bib
 vignette: >
   %\VignetteIndexEntry{JASPAR2020}
   %\VignetteEngine{knitr::rmarkdown}
@@ -24,7 +25,7 @@ suppressPackageStartupMessages({
 })
 ```
 
-# 1. Introduction
+# Introduction
 
 JASPAR (http://jaspar.genereg.net) is an open-access database of curated, non-redundant
 transcription factor (TF)-binding profiles stored as position frequency matrices (PFMs) for TFs
@@ -34,10 +35,10 @@ nematodes, 10 for insects, and 7 for fungi), and 157 PFMs were updated (125 for 
 28 for plants, and 3 for insects). These new profiles represent an 18% expansion compared to
 the previous release. JASPAR 2020 comes with a novel collection of unvalidated TF-binding
 profiles for which our curators did not find orthogonal supporting evidence in the literature. This
-collection has a dedicated web form to engage the community in the curation of unvalidated TFbinding
+collection has a dedicated web form to engage the community in the curation of unvalidated TF-binding
 profiles.
 
-The easiest way to use the JASPAR2020 data package is by `TFBSTools` package interface, which provides methods to retrieve data from the JASPAR database.
+The easiest way to use the JASPAR2020 data package [@Fornes:2019] is by `TFBSTools` package interface [@Tan:2016], which provides functions to retrieve and manipulate data from the JASPAR database. This vignette demonstrates how to use those functions.
 
 ```{r setup}
 library(JASPAR2020)
@@ -45,44 +46,48 @@ library(TFBSTools)
 
 ```
 
-# 2. Retrieving matrices from JASPAR2020 by ID or name
+# Retrieving matrices from JASPAR2020 by ID or name
 
-Matrices from JASPAR can be retrived using either `getMatrixByID` or ` getMatrixByName` function by providing a matrix ID or matrix name from JASPAR respectively. These functions accept either a single element as the ID/name parameter or a vector of value. In the former case a `PFMatrix` object is returned, while in the later a `PFMLatrixList` objects, containing multiple `PFMatrix` objects is return.
+Matrices from JASPAR can be retrieved using either `getMatrixByID` or ` getMatrixByName` function by providing a matrix ID or a matrix name from JASPAR, respectively. These functions accept either a single element as the ID/name parameter or a vector of values. The former case returns a `PFMatrix` object, while the later one returns a `PFMatrixList` with multiple `PFMatrix` objects.
 
 ```{r example_name_id, tidy=TRUE}
 
-## ID argument containing single matrix ID
-## a PFMatrix object is returned
+## the user assigns a single matrix ID to the argument ID 
 pfm <- getMatrixByID(JASPAR2020, ID="MA0139.1")
+## the function returns a PFMatrix object
 pfm
+```
 
-## PFMatrix object can be used to construct and visualise the sequence logo
+The user can utilise the PFMatrix object for further analysis and visualisation. Here is an example of how to plot a sequence logo of a given matrix using functions available in `TFBSTools` package.
+
+```{r seq_logo}
 seqLogo(toICM(pfm))
+```
 
-## ID argument containing multiple matrix ID
-## a PFMatrixList object is returned
+```{r multiple_matrix_id}
+## the user assigns multiple matrix IDs to the argument ID 
 pfmList <- getMatrixByID(JASPAR2020, ID=c("MA0139.1", "MA1102.1"))
+## the function returns a PFMatrix object
 pfmList
 
-## The PFMatrixList object can be subset to extract single PFMatrix objects
+## PFMatrixList can be subsetted to extract enclosed PFMatrix objects
 pfmList[[2]]
+```
 
-## In the same manner as with ID, the getMatrixByName method is used to retrieve matrices by name
-pfm <- getMatrixByName(JASPAR2020, name="CTCF")
+`getMatrixByName` retrieves matrices by name. If multiple matrix names are supplied, the function returns a PFMatrixList object.
+
+```{r getMatrixByName_example}
+pfm <- getMatrixByName(JASPAR2020, name="Arnt")
 pfm
-seqLogo(toICM(pfm))
 
-##
-## multiple names can be suplied and PFMAtrixList objects is returned
-pfmList <- getMatrixByName(JASPAR2020, name=c("CTCF", "CTCFL"))
+pfmList <- getMatrixByName(JASPAR2020, name=c("Arnt", "Ahr::Arnt"))
 pfmList
-pfmList[[2]]
 
 ```
 
-# 3. Get sets of matrices using filtering criteria
+# The use of filtering criteria
 
-The `getMatrixSet` search function fetches matrix data for all matrices in the database matching criteria defined by the named arguments and returns a `PFMatrixList` object. 
+The `getMatrixSet` function fetches all matrices that match criteria defined by the named arguments, and it returns a `PFMatrixList` object. 
 
 ```{r example_set, tidy=TRUE}
 
@@ -100,5 +105,17 @@ opts2[["type"]] <- "SELEX"
 PFMatrixList2 <- getMatrixSet(JASPAR2020, opts2)
 PFMatrixList2
 ```
+
+Additional details about TFBS matrix analysis can be found in the [TFBSTools](https://bioconductor.org/packages/release/bioc/html/TFBSTools.html) documantation.
+
+# Session Info
+
+Here is the output of `sessionInfo()` on the system on which this document was compiled:
+
+```{r session_info, echo=FALSE}
+sessionInfo()
+```
+
+# Bibliography
 
 
