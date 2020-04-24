@@ -1,7 +1,7 @@
 Package: JASPAR2020
 Type: Package
 Title: Data package for JASPAR database (version 2020)
-Version: 0.99.8
+Version: 0.99.9
 Author: Damir Baranasic <damir.baranasic@lms.mrc.ac.uk>
 Maintainer: Damir Baranasic <damir.baranasic@lms.mrc.ac.uk>
 Description: Data package for JASPAR2020. To search this
@@ -12,7 +12,7 @@ URL: http://jaspar.genereg.net/
 NeedsCompilation: no
 biocViews: AnnotationData, FunctionalAnnotation
 LazyData: no
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 Suggests: 
     knitr,
     rmarkdown,
